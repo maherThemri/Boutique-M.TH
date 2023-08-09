@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur de paiment - La boutique M.TH
+{% endblock %}
+
+{% block content %}
+	<h2>Confirmation de commande
+	</h2>
+	<p>Bonjour
+		<strong>{{order.user.firstName}}
+			{{order.user.lastName}}</strong>
+		,<br>
+		Il semblerait que votre paiment esT échoué pour votre commande N°<Strong>{{order.reference}}</Strong>.
+		<br>
+		Une confirmation d'erreur vient de vous etre envoyée par email à l'adresse
+		<strong>{{order.user.email}}.</strong>
+	</p>
+	<a href="{{path('app_order')}}" class="btn btn-success">Réessayer le paiment</a>
+{% endblock %}
